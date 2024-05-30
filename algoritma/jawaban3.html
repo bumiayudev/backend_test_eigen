@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menentukan berapa kali array query terdapat array input</title>
+</head>
+<body>
+    <p>Menentukan berapa kali array query terdapat array input</p>
+
+    <script>
+        function numberOfWordInArray(input, query){
+            let result = [];
+
+            for (let q of query){
+                let count = 0;
+                for(let i of input){
+                    if(i === q){
+                        count++;
+                    }
+                }
+                result.push(count);
+            }
+
+            return result;
+        }
+
+        let input = ['xc', 'dz', 'bbb', 'dz'];
+        let query = ['bbb', 'ac', 'dz'];
+
+        let output = numberOfWordInArray(input, query);
+        console.log(output);
+    </script>
+</body>
+</html>

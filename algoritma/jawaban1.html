@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritma pertama - reverse alphabet</title>
+</head>
+<body>
+    <p>Reverse alphabet</p>
+
+    <script>
+        function reverseAlpha(str){
+            let words = str.match(/[a-zA-Z]/g);
+            let number = str.match(/\d+/);
+
+            words = words.reverse();
+            let reversedStr = words.join('');
+
+            return reversedStr + number;
+        }
+
+        let input = "NEGIE1";
+        let output = reverseAlpha(input);
+        console.log(output);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menemukan kata terpanjang di dalam kalimat</title>
+</head>
+<body>
+    <p>Menemukan kata terpanjang di dalam kalimat</p>
+
+    <script>
+        function longest(sentences){
+            let words = sentences.split(' ');
+            let longestWord = '';
+
+            for (const word of words) {
+                if (word.length > longestWord.length) {
+                    longestWord = word;
+                }
+            }
+
+            return longestWord+': '+longestWord.length+' character';
+        }
+
+        let input = 'Saya sangat senang mengerjakan soal algoritma';
+        let output = longest(input);
+        console.log(output);
+    </script>
+</body>
+</html>

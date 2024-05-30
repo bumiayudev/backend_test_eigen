@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mencari hasil diagonal matrik</title>
+  </head>
+  <body>
+    <p>mencari hasil diagonal matrik</p>
+
+    <script>
+      function diagonalDifference(matrix) {
+        let n = matrix.length;
+        let firstDiagonalSum = 0;
+        let secondDiagonalSum = 0;
+
+        // Calculate the sum of the first diagonal
+        for (let i = 0; i < n; i++) {
+          firstDiagonalSum += matrix[i][i];
+        }
+
+        // Calculate the sum of the second diagonal
+        for (let i = 0; i < n; i++) {
+          secondDiagonalSum += matrix[i][n - 1 - i];
+        }
+
+        // Return the absolute difference between the two diagonal sums
+        return Math.abs(firstDiagonalSum - secondDiagonalSum);
+      }
+
+      // Example usage:
+      const matrix = [
+        [1, 2, 0],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+      console.log(diagonalDifference(matrix)); // Output: 3
+    </script>
+  </body>
+</html>
