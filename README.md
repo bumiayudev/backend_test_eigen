@@ -1,6 +1,7 @@
-#### "<-| Tes rest api menggunakan swagger docs |->" 
+"<- [Tes rest api menggunakan swagger docs] ->" 
 
-- [!NOTE] Langkah - langkah yang harus diperhatikan untuk menjalankan rest api
+> [!NOTE] 
+> Langkah - langkah yang harus diperhatikan untuk menjalankan rest api
 
 1. anda harus masuk dulu ke folder app.
 
