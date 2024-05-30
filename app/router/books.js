@@ -85,7 +85,74 @@ router.get('/books/:code', getBookById);
  */
 
 router.post('/books', createBook);
+
+/**
+ * @swagger
+ * /api/books/{code}:
+ *   patch:
+ *     summary: update a book
+ *     description: update a book.
+ *     parameters:
+ *      - in: path
+ *        name : code
+ *     requestBody:
+ *          description: the field input
+ *          content: 
+ *              application/json:
+ *                  book:
+ *                      type: object
+ *                  properties:
+ *                      bookId:
+ *                        type:string
+ *                      title:
+ *                        type:string
+ *                      author:
+ *                        type:string
+ *                      stock:
+ *                        type:integer
+ *                  required:
+ *                      - code
+ *                      - bookId
+ *                      - title
+ *                      - author
+ *                      - stock
+ *                  examples:
+ *                      book:
+ *                        summary: an example book
+ *                        value:
+ *                          bookId: B2012
+ *                          title: Senyumin aja
+ *                          author: Heriyanto
+ *                          stock: 10
+ *     responses:
+ *       200:
+ *         description: update book.
+ *         content:
+ *           application/json:
+ *             message:
+ *               type:string
+ */
+
 router.patch('/books/:code', updateBook);
+
+/**
+ * @swagger
+ * /api/books/{code}:
+ *   delete:
+ *     summary: delete book by id
+ *     description: delete book by id
+ *     parameters:
+ *       - in: path
+ *         name: code
+ *         required: true
+ *     responses:
+ *       '200':
+ *         description: deleted successfully.
+ *         content:
+ *           application/json:
+ *             message:
+ *               type:object
+ */
 router.delete('/books/:code', deleteBook);
 
 module.exports = router;
