@@ -1,10 +1,10 @@
 class Loan {
-    constructor(code, member_id, book_id, loan_date, due_date){
+    constructor(code, memberId, bookId, loanDate, dueDate){
         this.code = code;
-        this.member_id = member_id;
-        this.book_id = book_id;
-        this.loan_date = loan_date;
-        this.due_date = due_date;
+        this.memberId = memberId;
+        this.bookId = bookId;
+        this.loanDate = loanDate;
+        this.dueDate = dueDate;
     }
 }
 
