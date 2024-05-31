@@ -46,6 +46,11 @@ class LoanRepository{
         const result = await this.connection.query("SELECT COUNT(book_id) AS count FROM loan WHERE book_id = ? AND member_id =?", [data.bookId, data.memberId]);
         return result[0][0].count; 
     }
+
+    async getAll(){
+        let sql = "SELECT l.code as loanId, l.loan_date as loanDate, l.due_date as dueDate, l.loan_status as status, m.name as memberName , b.title as bookTitle FROM loan AS l LEFT JOIN members AS m ON l.member_id = m.code LEFT JOIN books AS b ON l.book_id = b.code";
+        return await this.connection.query(sql);
+    }
 }
 
 module.exports = LoanRepository;

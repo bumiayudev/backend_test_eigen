@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { savedLoanBook } = require('../controllers/loanController');
+const { savedLoanBook, getAllLoan } = require('../controllers/loanController');
 
 /**
  * @swagger
@@ -50,5 +50,35 @@ const { savedLoanBook } = require('../controllers/loanController');
  */
 
 router.post('/loan', savedLoanBook);
+
+/**
+ * @swagger
+ * /api/loan:
+ *   get:
+ *     summary: list of loan book
+ *     description: list of loan book.
+ *     responses:
+ *       200:
+ *         description: list of loan book.
+ *         content:
+ *           application/json:
+ *              data:
+ *                  type: object
+ *                  properties:
+ *                      loanId:
+ *                          type: string
+ *                      loanDate:
+ *                          type: date
+ *                      dueDate:
+ *                          type: date
+ *                      memberName:
+ *                          type: string
+ *                      bookTitle:
+ *                          type: string
+ *                      status:
+ *                          type: string
+ */
+
+router.get('/loan', getAllLoan);
 
 module.exports = router;

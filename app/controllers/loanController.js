@@ -20,6 +20,10 @@ const LoanController = {
         } else {
             res.status(400).json({message: result.message});
         }
+    },
+    getAllLoan: async(req, res)=>{
+        let [results] = await loanService.getAllLoan();
+        res.status(200).json({data: results});
     }
 }
 
